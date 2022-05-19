@@ -1,0 +1,21 @@
+.rating {
+  width: 50px;
+  height: 50px;
+  background-color: #262f38;
+  color: var(--dark-gray);
+  border-radius: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  cursor: pointer;
+}
+
+.hover-rating {
+  background-color: var(--light-gray);
+  color: #e4e3e3;
+}
+
+.selected {
+  background-color: var(--orange);
+  color: #e4e3e3;
+}

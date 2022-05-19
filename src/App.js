@@ -1,23 +1,30 @@
-import logo from './logo.svg';
-import './App.css';
+import { useContext } from 'react';
+import "./app.css";
+import {ReactComponent as IconStar} from "./assets/icon-star.svg";
+import RatingItem from "./components/RatingItem";
+import { RatingContext } from './Context/RatingProvider';
+import { Link } from 'react-router-dom';
 
-function App() {
+const App = () => {
+  const { rating, setRating } = useContext(RatingContext);
+
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+    <div className="app">
+      <div className="ratingContainer">
+        <div className="star">
+          <IconStar />
+        </div>
+        <h1 className="ratingTitle">How did we do?</h1>
+        <p className="ratingText">Please let us know how we did with your support request. All feedback is appreciated to help us improve our offering!</p>
+        <div className="ratings">
+          <RatingItem rating={rating} setRating={setRating} score={1}/>
+          <RatingItem rating={rating} setRating={setRating} score={2}/>
+          <RatingItem rating={rating} setRating={setRating} score={3}/>
+          <RatingItem rating={rating} setRating={setRating} score={4}/>
+          <RatingItem rating={rating} setRating={setRating} score={5}/>
+        </div>
+        <Link to="/submit" className="submitBtn">SUBMIT</Link>
+      </div>
     </div>
   );
 }

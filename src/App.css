@@ -1,38 +1,98 @@
-.App {
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700&display=swap');
+
+:root {
+  --primary: #141519;
+  --secondary: #181f29;
+  --orange: #f97618;
+  --light-gray: #7e8c99;
+  --dark-gray: #646b75;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: 'Roboto', sans-serif;
+}
+
+body {
+  background-color: var(--primary);
+}
+
+.app {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  color: #e4e3e3;
+}
+
+.ratingContainer {
+  background-color: var(--secondary);
+  display: flex;
+  flex-direction: column;
+  gap: 25px;
+  padding: 33px;
+  border-radius: 30px;
+  width: 100%;
+  max-width: 400px;
+  height: max-content;
+}
+
+.star {
+  display: inline-block;
+  width: max-content;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 15px;
+  background-color: #273039;
+  border-radius: 100%;
+  margin-bottom: 10px;
+}
+
+.ratingTitle {
+  font-size: 28px;
+}
+
+.ratingText {
+  line-height: 1.6;
+  font-size: 15px;
+  color: var(--dark-gray);
+}
+
+.ratings {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.submitBtn {
+  background-color: var(--orange);
+  text-decoration: none;
+  padding: 12px;
+  border-radius: 20px;
+  letter-spacing: 2px;
+  font-weight: 500;
+  color: #e4e3e3;
+  cursor: pointer;
   text-align: center;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+.submitBtn:hover {
+  color: var(--orange);
+  background-color: #e4e3e3;
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
+.thankYouImg {
+  text-align: center;
 }
 
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
-}
-
-.App-link {
-  color: #61dafb;
-}
-
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+.resultText {
+  margin: auto;
+  padding: 5px 20px;
+  border-radius: 20px;
+  background-color: #262f38;
+  color: var(--orange);
+  width: max-content;
 }
